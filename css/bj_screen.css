@@ -1,0 +1,14 @@
+.start_btn {
+  color: green;
+  background-color: white;
+}
+
+.end_btn {
+  color: red;
+  background-color: white;
+}
+
+.draw_btn {
+  color: blue;
+  background-color: white;
+}
