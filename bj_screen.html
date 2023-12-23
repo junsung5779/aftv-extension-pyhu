@@ -22,17 +22,25 @@
     <title>Put your hands up</title>
   </head>
   <body>
-    <div id="main">
-      <h1>부처핸썸!123</h1>
-      <p>
-        종료 버튼을 누르지 않으면<br />
-        1분 뒤 자동 종료됩니다.
-      </p>
-      <p id="status">현재상태: 종료</p>
-      <button id="start_btn" class="start_btn">시작!</button>
-      <button id="end_btn" class="end_btn">종료!</button>
-      <button id="draw_btn" class="draw_btn">추첨하기</button>
-      <p id="winner">당첨자:</p>
+    <div id="main" class="main">
+      <div>
+        <h1>부처핸썸!</h1>
+        <p class="warning">
+          시작 버튼을 누른 후 종료 버튼을 누르지 않으면<br />
+          5분 뒤 자동 종료됩니다.
+        </p>
+      </div>
+      <div>
+        <p id="status">현재상태: 종료</p>
+        <button id="start_btn" class="start_btn">시작!</button>
+        <button id="end_btn" class="end_btn">종료!</button>
+        <button id="draw_btn" class="draw_btn" disabled>추첨하기</button>
+        <br />
+        <br />
+        <div id="countdown">남은 시간: 0초</div>
+        <br />
+        <p id="winner">당첨자:</p>
+      </div>
     </div>
   </body>
 </html>
