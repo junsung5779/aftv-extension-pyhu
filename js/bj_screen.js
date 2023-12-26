@@ -114,14 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   drawBtn.addEventListener("click", function () {
     // 로컬 스토리지에 저장된 유저 리스트 불러오기
     const oUserList = loadUserListFromLocalStorage();
-    // 테스트용 임시 배열
-    // let oUserList = [
-    //   { userId: "user01", userNickname: "Nickname1" },
-    //   { userId: "user02", userNickname: "Nickname2" },
-    //   { userId: "user03", userNickname: "Nickname3" },
-    //   { userId: "user04", userNickname: "Nickname4" },
-    //   { userId: "user05", userNickname: "Nickname5" },
-    // ];
+
     if (oUserList.length > 0) {
       // 자바스크립트 표준 내장 객체 Math 사용하여 랜덤 로직 구현
       var randomIndex = Math.floor(Math.random() * oUserList.length);
