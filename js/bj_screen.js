@@ -6,13 +6,13 @@ var autoEndTimeout; // 자동 종료 타이머를 위한 변수
 
 // 로컬 스토리지에서 사용자 리스트 불러오기
 const loadUserListFromLocalStorage = () => {
-  const storedList = localStorage.getItem("userList");
+  const storedList = localStorage.getItem("pyhuUserList");
   return storedList ? JSON.parse(storedList) : [];
 };
 
 // 로컬 스토리지에 사용자 리스트 저장하기
 const saveUserListToLocalStorage = (userList) => {
-  localStorage.setItem("userList", JSON.stringify(userList));
+  localStorage.setItem("pyhuUserList", JSON.stringify(userList));
 };
 
 const handleChatInfoReceived = (action, message) => {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     extensionSdk.chat.send("MESSAGE", "-----시작-----");
     if (currentState !== "진행중") {
       updateState("진행중");
-      localStorage.removeItem("userList");
+      localStorage.removeItem("pyhuUserList");
       autoEndTimeout = setTimeout(() => updateState("종료"), 300000);
     } else {
       alert("이미 진행중입니다");
@@ -95,11 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     extensionSdk.chat.send("MESSAGE", "-----종료-----");
 
     // 로컬 스토리지에서 사용자 목록 불러오기
-    const storedList = localStorage.getItem("userList");
+    const storedList = localStorage.getItem("pyhuUserList");
     const userList = storedList ? JSON.parse(storedList) : [];
 
-    // 콘솔에 사용자 목록 출력
-    console.log("저장된 사용자 목록:", userList);
     statusElement.textContent = "현재상태: " + currentState;
 
     // 자동 종료 타이머 취소
